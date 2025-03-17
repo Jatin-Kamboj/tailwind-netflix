@@ -24,16 +24,13 @@
           raped and murdered her daughter is freed on a technicality.
         </div>
         <div class="movie-poster__buttons flex gap-2">
-          <button
-            class="px-6 py-2 bg-white rounded-md text-sm md:text-base flex items-center gap-1 font-bold"
-          >
-            <PlayIcon class="h-7 w-7" /> Play
-          </button>
-          <button
-            class="px-6 py-2 bg-grayish rounded-md text-sm md:text-base flex items-center gap-1 text-white"
-          >
-            <InformationCircleIcon class="h-7 w-7 text-white" /> More info
-          </button>
+          <app-button label="Play" variant="primary" #appendIcon>
+            <PlayIcon class="h-7 w-7" />
+          </app-button>
+
+          <app-button label="More info" variant="secondary" #appendIcon>
+            <InformationCircleIcon class="h-7 w-7 text-white" />
+          </app-button>
         </div>
       </div>
     </div>
@@ -42,6 +39,7 @@
 
 <script setup>
 import { PlayIcon, InformationCircleIcon } from "@heroicons/vue/24/solid";
+import { AppButton } from "@/components/shared";
 </script>
 
 <style></style>
