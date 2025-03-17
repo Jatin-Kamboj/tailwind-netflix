@@ -1,5 +1,6 @@
 <template>
   <button
+    v-if="variantConfig?.classes"
     :class="variantConfig.classes"
     class="md:px-6 md:py-2 px-2 py-1 text-sm md:text-base font-bold transition hover:scale-105 duration-300 ease-in-out focus:outline-none focus:ring-2 rounded-md flex items-center gap-1"
   >

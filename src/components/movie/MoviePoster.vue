@@ -36,7 +36,9 @@
         </div>
       </div>
     </div>
-    <div class="movie-poster__description grid-cols-2 grid text-white">
+    <div
+      class="movie-poster__description grid-cols-2 grid text-white my-4 gap-3"
+    >
       <div class="text-white text-sm md:text-base">
         In small-town Punjab, three friends dream of better lives in London but
         struggle to secure visas — until an ex-soldier reveals a wildly risky
@@ -46,8 +48,32 @@
         <div><span class="text-grayish">Cast: </span> Cast</div>
       </div>
     </div>
-    <div class="movie-recommendations mt-6 mb-10">
-      <movie-list :movies="movies" title="More Like This" />
+
+    <div class="grid grid-cols-5">
+      <div
+        class="movie-card rounded-md relative cursor-pointer bg-[#2F2F2F] h-[300px]"
+      >
+        <img
+          class="w-full h-[150px] object-cover rounded-lg"
+          src="https://m.media-amazon.com/images/M/MV5BODc1YTE2MDUtNGQ1NS00YmIzLWFjMDItMTg0NjJjMzA0MGQ4XkEyXkFqcGc@._V1_.jpg"
+          alt="Homepage movie"
+        />
+
+        <div class="flex justify-between items-center p-4 text-white">
+          <div class="">2023</div>
+
+          <div
+            class="h-9 w-9 text-white ring-2 rounded-full ring-gray-400 cursor-pointer hover:ring-white flex items-center justify-center"
+          >
+            <PlusIcon class="h-7 w-7" />
+          </div>
+        </div>
+
+        <div class="text-xs md:text-sm p-4 text-white">
+          A steely prison warden (Shah Rukh Khan) is driven by a brutal mission
+          for justice in this exclusive extended cut of the record-breaking hit.
+        </div>
+      </div>
     </div>
   </div>
 </template>
