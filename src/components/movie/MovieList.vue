@@ -8,8 +8,8 @@
       </div>
       <ChevronRightIcon class="w-[13px] h-[13px] text-blue-400" />
     </div>
+
     <div class="movie-list flex overflow-y-scroll gap-1.5">
-      <!-- <div class="movie-list flex overflow-y-scroll gap-1"> -->
       <template v-for="(movie, i) in movies" :key="movie.Year + i">
         <movie-card :movie="movie" />
       </template>
@@ -18,11 +18,25 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { ChevronRightIcon } from "@heroicons/vue/24/solid";
+import { ref, toRef } from "vue";
+import useAxios from "@/composables/useAxios";
 import { MovieCard } from "@/components/movie";
+import { ChevronRightIcon } from "@heroicons/vue/24/solid";
 
-const props = defineProps(["title", "movies"]);
+const movies = ref([]);
+const props = defineProps(["title", "genre"]);
+
+const genre = toRef(props, "genre");
+const { get, data } = useAxios();
+
+async function fetchMovies() {
+  await get(
+    `/imdb/search?type=movie&rows=25&sortOrder=ASC&sortField=id&genre=${genre.value}`
+  );
+  movies.value = data.value?.results ?? [];
+}
+
+fetchMovies();
 </script>
 
 <style></style>
