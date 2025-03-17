@@ -1,6 +1,6 @@
 <template>
   <div
-    class="movie-card rounded-md relative cursor-pointer flex-shrink-0"
+    class="movie-card rounded-md relative cursor-pointer flex-shrink-0 hover:scale-90 duration-300 ease-in-out"
     @click="toMoviePage"
   >
     <img

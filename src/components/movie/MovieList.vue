@@ -8,7 +8,8 @@
       </div>
       <ChevronRightIcon class="w-[13px] h-[13px] text-blue-400" />
     </div>
-    <div class="movie-list flex overflow-y-scroll gap-2">
+    <!-- <div class="movie-list flex overflow-y-scroll gap-1.5"> -->
+    <div class="movie-list flex overflow-y-scroll gap-1">
       <template v-for="(movie, i) in movies" :key="movie.Year + i">
         <movie-card :movie="movie" />
         <movie-card :movie="movie" />

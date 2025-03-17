@@ -62,14 +62,7 @@ function handleScroll() {
   isScrolled.value = window.scrollY > 50; // Change class when scrolled down 50px
 }
 
-onMounted(() => {
-  console.log("Added");
-  addEventListener("scroll", (event) => {
-    alert("Jatin");
-  });
-
-  // onscroll = (event) => {};
-});
+onMounted(() => {});
 
 onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
