@@ -12,14 +12,16 @@ export default {
       },
       fontFamily: {
         sans: [
-          "Bebas Neue",
+          "Montserrat",
           "sans-serif",
+          "Bebas Neue",
           "Helvetica",
           "Arial",
           "sans-serif",
           "mono",
         ],
         montserrat: "Montserrat",
+        primary: "Bebas Neue",
       },
       screens: {
         // xs: "480px",

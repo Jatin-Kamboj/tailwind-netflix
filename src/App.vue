@@ -1,9 +1,11 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import AppHeader from "@/layouts/app-layout/AppHeader.vue";
 </script>
 
 <template>
-  <header></header>
+  <!-- <header></header> -->
+  <AppHeader />
   <main class="w-full h-screen">
     <RouterView />
   </main>
