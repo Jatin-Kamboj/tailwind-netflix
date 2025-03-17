@@ -1,7 +1,12 @@
 <template>
-  <section id="movie-show__page">Movie</section>
+  <section id="movie-show__page">Movie {{ params.id }}</section>
 </template>
 
-<script setup></script>
+<script setup>
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+const { params } = route;
+</script>
 
 <style></style>
