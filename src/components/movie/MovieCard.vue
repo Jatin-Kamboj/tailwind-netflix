@@ -1,12 +1,13 @@
 <template>
   <div
-    class="movie-card rounded-md relative cursor-pointer flex-shrink-0 hover:scale-90 duration-300 ease-in-out"
+    v-if="movie"
     @click="toMoviePage"
+    class="movie-card rounded-md relative cursor-pointer flex-shrink-0 hover:scale-90 duration-300 ease-in-out"
   >
     <img
       class="w-[270px] h-[150px] object-cover rounded-lg"
-      src="https://m.media-amazon.com/images/M/MV5BODc1YTE2MDUtNGQ1NS00YmIzLWFjMDItMTg0NjJjMzA0MGQ4XkEyXkFqcGc@._V1_.jpg"
-      alt="Homepage movie"
+      :src="movie.primaryImage"
+      :alt="movie.primaryTitle"
     />
     <div class="absolute top-2 left-0 movie__title">
       <img
