@@ -1,6 +1,6 @@
 <template>
   <section id="home" class="">
-    <movie-poster />
+    <top-movie-poster />
 
     <!-- Top movies lists -->
     <div class="flex gap-11 flex-col mx-2 md:mx-14">
@@ -18,7 +18,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { MovieList, MovieCard, MoviePoster } from "@/components/movie";
+import { MovieList, MovieCard, TopMoviePoster } from "@/components/movie";
 
 const movies = ref([
   {

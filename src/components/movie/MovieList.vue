@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col movie-list__wrapper">
-    <div class="flex items-center gap-1 mb-2 cursor-pointer">
+    <div class="flex items-center gap-1 mb-2 cursor-pointer" v-if="title">
       <div
         class="movie-list__title text-sm md:text-lg font-montserrat text-left text-white"
       >

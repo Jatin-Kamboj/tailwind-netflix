@@ -27,6 +27,11 @@ const VARIANTS_CONFIG = {
     classes: `bg-grayish text-white hover:bg-gray-500 
               focus:ring-gray-400`,
   },
+  icon: {
+    classes: `h-9 w-9 text-white ring-2 rounded-full ring-gray-400
+             cursor-pointer hover:ring-white flex items-center 
+             justify-center`,
+  },
 };
 
 const variantConfig = computed(() => {
