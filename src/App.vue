@@ -4,11 +4,10 @@ import AppHeader from "@/layouts/AppLayout/AppHeader.vue";
 </script>
 
 <template>
-  <!-- <header></header> -->
   <AppHeader />
+
+  <!-- <div class="h-[4.3rem] bg-white"></div> -->
   <main class="w-full h-screen overflow-scroll bg-dark">
     <RouterView />
   </main>
 </template>
-
-<!-- This needs to be removed -->

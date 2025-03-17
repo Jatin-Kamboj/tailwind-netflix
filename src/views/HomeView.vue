@@ -1,21 +1,28 @@
 <template>
-  <section id="home" class="mx-2 md:mx-14">
-    <div class="flex gap-2 flex-col">
+  <section id="home" class="">
+    <movie-poster />
+
+    <!-- Top movies lists -->
+    <div class="flex gap-11 flex-col mx-2 md:mx-14">
       <movie-list :title="`New on Netflix`" :movies="movies" />
-      <movie-list :title="`New on Netflix`" :movies="movies" />
-      <movie-list :title="`New on Netflix`" :movies="movies" />
-      <movie-list :title="`New on Netflix`" :movies="movies" />
-      <movie-list :title="`New on Netflix`" :movies="movies" />
+      <movie-list :title="`Exciting TV Thrillers`" :movies="movies" />
+      <movie-list :title="`Top 10 movies in India`" :movies="movies" />
+      <movie-list
+        :title="`International Movies Dubbed in Hindi `"
+        :movies="movies"
+      />
+      <movie-list :title="`Movies based upon books`" :movies="movies" />
     </div>
   </section>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import { MovieList, MovieCard } from "@/components/movie";
+import { MovieList, MovieCard, MoviePoster } from "@/components/movie";
 
 const movies = ref([
   {
+    id: 1,
     Title: "Star Wars: Episode IV - A New Hope",
     Year: "1977",
     Rated: "PG",
@@ -57,6 +64,7 @@ const movies = ref([
     Response: "True",
   },
   {
+    id: 2,
     Title: "Star Wars: Episode IV - A New Hope",
     Year: "1977",
     Rated: "PG",
