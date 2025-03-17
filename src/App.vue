@@ -5,8 +5,8 @@ import AppHeader from "@/layouts/AppLayout/AppHeader.vue";
 
 <template>
   <!-- <header></header> -->
-  <!-- <AppHeader /> -->
-  <main class="w-full h-screen bg-dark">
+  <AppHeader />
+  <main class="w-full h-screen overflow-scroll bg-dark">
     <RouterView />
   </main>
 </template>
