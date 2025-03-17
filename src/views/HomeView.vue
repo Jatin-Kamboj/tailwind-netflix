@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="mx-14">
+  <section id="home" class="mx-2 md:mx-14">
     <div class="flex gap-2 flex-col">
       <movie-list :title="`New on Netflix`" :movies="movies" />
       <movie-list :title="`New on Netflix`" :movies="movies" />
