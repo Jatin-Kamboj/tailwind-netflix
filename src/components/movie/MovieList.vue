@@ -10,7 +10,7 @@
     </div>
 
     <div class="movie-list flex overflow-y-scroll gap-1.5">
-      <template v-for="(movie, i) in movies" :key="movie.Year + i">
+      <template v-for="(movie, i) in movies" :key="movie.Year">
         <movie-card :movie="movie" />
       </template>
     </div>
@@ -30,10 +30,9 @@ const genre = toRef(props, "genre");
 const { get, data } = useAxios();
 
 async function fetchMovies() {
-  await get(
-    `/imdb/search?type=movie&rows=25&sortOrder=ASC&sortField=id&genre=${genre.value}`
-  );
-  movies.value = data.value?.results ?? [];
+  await get(`?apikey=b2493b42&s=${genre.value}&type=movie`);
+
+  movies.value = data.value?.Search ?? [];
 }
 
 fetchMovies();

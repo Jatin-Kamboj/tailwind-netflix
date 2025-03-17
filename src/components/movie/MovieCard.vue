@@ -6,8 +6,8 @@
   >
     <img
       class="w-[270px] h-[150px] object-cover rounded-lg"
-      :src="movie.primaryImage"
-      :alt="movie.primaryTitle"
+      :src="movie.Poster"
+      :alt="movie.Title"
     />
     <div class="absolute top-2 left-0 movie__title">
       <img
@@ -32,7 +32,7 @@ const props = defineProps({
 
 const router = useRouter();
 function toMoviePage() {
-  const { id } = props.movie;
-  router.push({ name: "movie-show", params: { id } });
+  const { imdbID } = props.movie;
+  router.push({ name: "movie-show", params: { id: imdbID } });
 }
 </script>

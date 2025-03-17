@@ -5,8 +5,8 @@
     >
       <img
         class="w-full h-full object-cover"
-        src="https://m.media-amazon.com/images/M/MV5BODc1YTE2MDUtNGQ1NS00YmIzLWFjMDItMTg0NjJjMzA0MGQ4XkEyXkFqcGc@._V1_.jpg"
-        alt="Homepage movie poster"
+        :src="movie.Poster"
+        :alt="movie.Title"
       />
 
       <div
@@ -15,7 +15,7 @@
         <div
           class="movie-poster__heading text-3xl md:text-6xl font-montserrat font-extrabold text-white"
         >
-          Eye for an Eye
+          {{ Title }}
         </div>
 
         <div class="movie-poster__buttons flex gap-2.5 items-center">
@@ -60,7 +60,7 @@
         />
 
         <div class="flex justify-between items-center p-4 text-white">
-          <div class="">2023</div>
+          <div class="">{{ movie.Released }}</div>
 
           <div
             class="h-9 w-9 text-white ring-2 rounded-full ring-gray-400 cursor-pointer hover:ring-white flex items-center justify-center"
@@ -70,8 +70,7 @@
         </div>
 
         <div class="text-xs md:text-sm p-4 text-white">
-          A steely prison warden (Shah Rukh Khan) is driven by a brutal mission
-          for justice in this exclusive extended cut of the record-breaking hit.
+          {{ movie.Plot }}
         </div>
       </div>
     </div>
@@ -88,6 +87,8 @@ import { HandThumbUpIcon } from "@heroicons/vue/24/outline";
 import { AppButton } from "@/components/shared";
 import { MovieList } from "@/components/movie";
 import { ref } from "vue";
+
+const props = defineProps(["movie"]);
 
 const movies = ref([
   {
