@@ -1,0 +1,46 @@
+<template>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-2 md:gap-4">
+    <div
+      :key="movie.imdbID"
+      v-for="movie in movies"
+      class="movie-card rounded-md relative cursor-pointer bg-[#2F2F2F] h-[260px]"
+    >
+      <img
+        :src="movie.Poster"
+        :alt="movie.Title"
+        class="w-full h-[150px] object-cover rounded-lg"
+      />
+
+      <div class="flex justify-between items-center p-4 pb-0 text-white">
+        <div class="">{{ movie.Year }}</div>
+
+        <div
+          class="h-9 w-9 text-white ring-2 rounded-full ring-gray-400 cursor-pointer hover:ring-white flex items-center justify-center"
+        >
+          <PlusIcon class="h-7 w-7" />
+        </div>
+      </div>
+
+      <div class="text-xs md:text-sm p-4 text-white">
+        {{ movie.Title }}
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import useAxios from "@/composables/useAxios";
+import { ref } from "vue";
+
+const { get, data } = useAxios();
+const movies = ref([]);
+
+async function fetchMovieRecomendations() {
+  await get(`?apikey=b2493b42&s=movie&type=movie`);
+  movies.value = data.value?.Search ?? [];
+}
+
+fetchMovieRecomendations();
+</script>
+
+<style></style>

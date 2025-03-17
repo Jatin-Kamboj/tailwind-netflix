@@ -16,7 +16,7 @@
 <script setup>
 import { ref } from "vue";
 import useAxios from "@/composables/useAxios";
-import ThrillerMoviesList from "@/components/movie/ThrillerMoviesList.vue";
+
 import { MovieList, MovieCard, TopMoviePoster } from "@/components/movie";
 </script>
 

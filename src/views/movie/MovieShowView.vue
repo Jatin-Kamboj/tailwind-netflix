@@ -7,13 +7,14 @@
       <div class="text-3xl font-extrabold">{{ movie.Title }}</div>
     </div>
     <movie-poster :movie="movie" />
+    <movie-recommendations />
   </section>
 </template>
 
 <script setup>
 import { ref } from "vue";
 import { useRoute } from "vue-router";
-import { MoviePoster } from "@/components/movie";
+import { MoviePoster, MovieRecommendations } from "@/components/movie";
 import useAxios from "@/composables/useAxios";
 
 const route = useRoute();
