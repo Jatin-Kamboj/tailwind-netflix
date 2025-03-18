@@ -10,7 +10,7 @@
     </div>
 
     <div class="movie-list flex overflow-y-scroll gap-1.5">
-      <template v-for="(movie, i) in movies" :key="movie.Year">
+      <template v-for="movie in movies" :key="movie.Year">
         <movie-card :movie="movie" />
       </template>
     </div>
@@ -18,24 +18,17 @@
 </template>
 
 <script setup>
-import { ref, toRef } from "vue";
+import { computed, ref, toRef } from "vue";
 import useAxios from "@/composables/useAxios";
 import { MovieCard } from "@/components/movie";
 import { ChevronRightIcon } from "@heroicons/vue/24/solid";
+import useFetch from "@/composables/useFetch";
 
-const movies = ref([]);
 const props = defineProps(["title", "genre"]);
-
 const genre = toRef(props, "genre");
-const { get, data } = useAxios();
 
-async function fetchMovies() {
-  await get(`?apikey=b2493b42&s=${genre.value}&type=movie`);
+const fetchUrl = computed(() => `?apikey=b2493b42&s=${genre.value}&type=movie`);
+const { data, refetch, isFetching } = useFetch(fetchUrl.value);
 
-  movies.value = data.value?.Search ?? [];
-}
-
-fetchMovies();
+const movies = computed(() => data.value?.Search ?? []);
 </script>
-
-<style></style>
