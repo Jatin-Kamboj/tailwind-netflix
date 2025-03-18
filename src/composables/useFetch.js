@@ -2,7 +2,8 @@ import { ref, watch } from "vue";
 import { $http } from "@/services/api";
 
 /**
- * Fetches record from server
+ * Common composable to fetch the data from the server based upon the url
+ * @author {Jatin Kamboj}
  */
 export default function useFetch(url, config) {
   const data = ref(null);

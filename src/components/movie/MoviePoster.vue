@@ -1,10 +1,10 @@
 <template>
   <div class="movie-poster mb-6">
     <div
-      class="movie-poster__image w-full h-[60vh] flex justify-center items-center relative gap-6"
+      class="movie-poster__image-wrapper w-full h-[60vh] flex justify-center items-center relative gap-6"
     >
       <img
-        class="w-full h-full object-contain"
+        class="w-full h-full object-contain movie-poster__image"
         v-lazy="movie.Poster"
         :alt="movie.Title"
       />
@@ -74,5 +74,3 @@ import { ref } from "vue";
 
 const props = defineProps(["movie"]);
 </script>
-
-<style></style>

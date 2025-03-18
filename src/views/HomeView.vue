@@ -1,9 +1,8 @@
 <template>
   <section id="home" class="mb-20">
-    <!-- Top movies lists -->
     <top-movie-poster />
 
-    <div class="flex gap-11 flex-col mx-2 md:mx-14">
+    <div class="flex gap-11 flex-col mx-2 md:mx-14 movies-list__wrapper">
       <movie-list :title="`New on Netflix`" genre="Romance" />
       <movie-list :title="`Exciting TV Thrillers`" genre="Thriller" />
       <movie-list :title="`Top 10 War movies in India`" genre="War" />

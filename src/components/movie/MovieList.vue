@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col movie-list__wrapper">
+  <div class="flex flex-col movie-list">
     <div class="flex items-center gap-1 mb-2 cursor-pointer" v-if="title">
       <div
         class="movie-list__title text-sm md:text-lg font-montserrat text-left text-white"
@@ -9,7 +9,7 @@
       <ChevronRightIcon class="w-[13px] h-[13px] text-blue-400" />
     </div>
 
-    <div class="movie-list flex overflow-y-scroll gap-1.5">
+    <div class="movie-list__cards flex overflow-y-scroll gap-1.5">
       <template v-for="movie in movies" :key="movie.Year">
         <movie-card :movie="movie" />
       </template>
