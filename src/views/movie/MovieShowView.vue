@@ -32,7 +32,8 @@ const movie = computed(() => data.value ?? {});
 // Listen to route change and fetch the details of selected movie
 onBeforeRouteUpdate(async (to, from) => {
   if (to.params.id !== from.params.id) {
-    await refetch({}, fetchUrl.value);
+    const fetchUrl = `?i=${to.params.id}`;
+    await refetch({}, fetchUrl);
   }
 });
 </script>

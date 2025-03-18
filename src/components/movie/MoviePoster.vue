@@ -13,7 +13,7 @@
         class="movie-poster__details absolute bottom-12 left-10 flex flex-col gap-5"
       >
         <div
-          class="movie-poster__heading text-3xl md:text-6xl font-montserrat font-extrabold text-white"
+          class="movie-poster__title text-3xl md:text-6xl font-montserrat font-extrabold text-white break-words max-w-md md:max-w-3xl"
         >
           {{ movie.Title }}
         </div>

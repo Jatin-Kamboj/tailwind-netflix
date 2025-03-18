@@ -36,7 +36,7 @@ import { PlusIcon } from "@heroicons/vue/24/solid";
 import { computed, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
-const fetchUrl = computed(() => `?s=movie&type=movie`);
+const fetchUrl = computed(() => `?s=Drama&type=movie`);
 const { data, refetch, isFetching } = useFetch(fetchUrl.value);
 
 const movies = computed(() => data.value?.Search ?? []);
