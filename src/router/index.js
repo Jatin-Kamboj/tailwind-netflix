@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
 
 /**
  * App is Lazy loading all the routes in the browsers
@@ -11,12 +10,12 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: HomeView,
+      component: () => import("@/views/HomeView.vue"),
     },
     {
       path: "/movies/:id",
       name: "movie-show",
-      component: () => import("@/views/movie/MovieShowView.vue"),
+      component: () => import("@/views/MovieShowView.vue"),
     },
   ],
 });

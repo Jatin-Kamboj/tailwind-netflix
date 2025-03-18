@@ -29,12 +29,14 @@ const { data, refetch, isFetching } = useFetch(fetchUrl.value);
 
 const movie = computed(() => data.value ?? {});
 
+async function fetchMovie(movieId) {
+  const url = `?i=${movieId}`;
+  await refetch({}, url);
+}
+
 // Listen to route change and fetch the details of selected movie
 onBeforeRouteUpdate(async (to, from) => {
-  if (to.params.id !== from.params.id) {
-    const fetchUrl = `?i=${to.params.id}`;
-    await refetch({}, fetchUrl);
-  }
+  fetchMovie(to.params.id);
 });
 </script>
 
