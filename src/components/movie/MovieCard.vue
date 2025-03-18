@@ -22,6 +22,7 @@
 
 <script setup>
 import { useRouter } from "vue-router";
+import { scrollToTop } from "@/utils";
 
 const props = defineProps({
   movie: { type: Object, default: () => ({}), required: true },
@@ -32,5 +33,6 @@ const router = useRouter();
 function toMoviePage() {
   const { imdbID } = props.movie;
   router.push({ name: "movie-show", params: { id: imdbID } });
+  scrollToTop();
 }
 </script>

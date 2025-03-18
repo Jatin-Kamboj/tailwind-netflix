@@ -36,6 +36,7 @@ import { AppIcon } from "@/components/shared";
 import { PlusIcon } from "@heroicons/vue/24/solid";
 import { computed, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import { scrollToTop } from "@/utils";
 
 const fetchUrl = computed(() => `?s=Drama&type=movie`);
 const { data, refetch, isFetching } = useFetch(fetchUrl.value);
@@ -43,13 +44,6 @@ const { data, refetch, isFetching } = useFetch(fetchUrl.value);
 const movies = computed(() => data.value?.Search ?? []);
 
 const router = useRouter();
-
-/**
- * Scrolls to top on click on the recommended movie card
- */
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
 
 function toMoviePage({ imdbID, ...item }) {
   router.push({ name: "movie-show", params: { id: imdbID } });
