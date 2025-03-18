@@ -1,9 +1,8 @@
 <template>
   <div class="movie-poster mb-6">
     <div
-      class="w-full h-[60vh] flex justify-center items-center relative gap-6"
+      class="movie-poster__image w-full h-[60vh] flex justify-center items-center relative gap-6"
     >
-      <!-- class="w-full h-full object-contain" -->
       <img
         class="w-full h-full object-contain"
         v-lazy="movie.Poster"

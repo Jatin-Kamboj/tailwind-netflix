@@ -9,24 +9,24 @@ export default function useFetch(url, config) {
   const isFetching = ref(false);
   const error = ref(null);
 
-  function refetch(params) {
-    fetch(params);
-  }
-
-  const fetch = async (config) => {
+  async function fetchData(config, baseUrl) {
     try {
       isFetching.value = true;
-      const reponse = await $http.get(url, { ...config });
-      data.value = reponse.data;
-      console.log("data.value :>> ", data.value);
-    } catch (error) {
-      error.value = error?.message;
+      const response = await $http.get(baseUrl || url, { ...config });
+      data.value = response.data; // ✅ Only update on success
+      return data.value;
+    } catch (err) {
+      error.value = err?.message;
     } finally {
       isFetching.value = false;
     }
-  };
+  }
 
-  watch(url, () => fetch(config), { immediate: true });
+  function refetch(params = {}, baseUrl) {
+    return fetchData(params, baseUrl);
+  }
+
+  watch(url, () => fetchData(config), { immediate: true });
 
   return { data, isFetching, error, refetch };
 }
