@@ -1,8 +1,13 @@
 {
-  "name": "netflix-assignment",
+  "name": "netflix-clone",
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "author": {
+    "email": "jatinkmbj20@gmail.com",
+    "name": "Jatin Kamboj",
+    "url": "https://github.com/Jatin-Kamboj/tailwind-netflix"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -1,7 +1,6 @@
 <template>
   <div id="app-layout">
     <app-header />
-
     <main class="w-full h-screen overflow-scroll bg-dark">
       <RouterView />
     </main>
