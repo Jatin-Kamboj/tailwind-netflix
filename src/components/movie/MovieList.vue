@@ -19,15 +19,14 @@
 
 <script setup>
 import { computed, ref, toRef } from "vue";
-import useAxios from "@/composables/useAxios";
 import { MovieCard } from "@/components/movie";
 import { ChevronRightIcon } from "@heroicons/vue/24/solid";
-import useFetch from "@/composables/useFetch";
+import { useFetch } from "@/composables";
 
 const props = defineProps(["title", "genre"]);
 const genre = toRef(props, "genre");
 
-const fetchUrl = computed(() => `?apikey=b2493b42&s=${genre.value}&type=movie`);
+const fetchUrl = computed(() => `?s=${genre.value}&type=movie`);
 const { data, refetch, isFetching } = useFetch(fetchUrl.value);
 
 const movies = computed(() => data.value?.Search ?? []);

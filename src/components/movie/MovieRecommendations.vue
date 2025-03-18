@@ -29,19 +29,14 @@
 </template>
 
 <script setup>
-import useAxios from "@/composables/useAxios";
+import { useFetch } from "@/composables";
 import { PlusIcon } from "@heroicons/vue/24/solid";
-import { ref } from "vue";
+import { computed, ref } from "vue";
 
-const { get, data } = useAxios();
-const movies = ref([]);
+const fetchUrl = computed(() => `?s=movie&type=movie`);
+const { data, refetch, isFetching } = useFetch(fetchUrl.value);
 
-async function fetchMovieRecomendations() {
-  await get(`?apikey=b2493b42&s=movie&type=movie`);
-  movies.value = data.value?.Search ?? [];
-}
-
-fetchMovieRecomendations();
+const movies = computed(() => data.value?.Search ?? []);
 </script>
 
 <style></style>

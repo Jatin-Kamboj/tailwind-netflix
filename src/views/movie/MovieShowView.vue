@@ -12,25 +12,18 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { useRoute } from "vue-router";
 import { MoviePoster, MovieRecommendations } from "@/components/movie";
-import useAxios from "@/composables/useAxios";
+import { useFetch } from "@/composables";
 
 const route = useRoute();
 const { params } = route;
 
-const movie = ref({
-  name: "Article 320",
-});
+const fetchUrl = computed(() => `?i=${params.id}`);
+const { data, refetch, isFetching } = useFetch(fetchUrl.value);
 
-const { data, get } = useAxios();
-async function fetchMovieById() {
-  console.log("data.value :>> ", data.value);
-  await get(`?apikey=b2493b42&i=${params.id}`);
-  movie.value = data.value;
-}
-fetchMovieById();
+const movie = computed(() => data.value ?? {});
 </script>
 
 <style></style>
