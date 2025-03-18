@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="mb-20">
+  <section id="home" class="">
     <top-movie-poster />
 
     <div class="flex gap-11 flex-col mx-2 md:mx-14 movies-list__wrapper">
