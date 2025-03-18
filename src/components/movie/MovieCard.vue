@@ -2,6 +2,7 @@
   <div
     v-if="movie"
     tabindex="0"
+    @keydown.enter="toMoviePage"
     @click="toMoviePage"
     class="movie-card rounded-md relative cursor-pointer flex-shrink-0 hover:scale-90 duration-300 ease-in-out"
   >
