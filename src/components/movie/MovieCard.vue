@@ -4,9 +4,10 @@
     @click="toMoviePage"
     class="movie-card rounded-md relative cursor-pointer flex-shrink-0 hover:scale-90 duration-300 ease-in-out"
   >
+    <!-- :src="movie.Poster" -->
     <img
       class="w-[270px] h-[150px] object-cover rounded-lg"
-      :src="movie.Poster"
+      v-lazy="movie.Poster"
       :alt="movie.Title"
     />
     <div class="absolute top-2 left-0 movie__title">
@@ -23,14 +24,11 @@
 import { useRouter } from "vue-router";
 
 const props = defineProps({
-  movie: {
-    type: Object,
-    default: () => ({}),
-    required: true,
-  },
+  movie: { type: Object, default: () => ({}), required: true },
 });
 
 const router = useRouter();
+
 function toMoviePage() {
   const { imdbID } = props.movie;
   router.push({ name: "movie-show", params: { id: imdbID } });

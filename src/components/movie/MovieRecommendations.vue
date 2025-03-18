@@ -5,7 +5,7 @@
         class="movie-card rounded-md relative cursor-pointer bg-[#2F2F2F] h-[260px]"
       >
         <img
-          :src="movie.Poster"
+          v-lazy="movie.Poster"
           :alt="movie.Title"
           class="w-full h-[150px] object-cover rounded-lg"
         />

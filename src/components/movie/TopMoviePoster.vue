@@ -5,7 +5,7 @@
     >
       <img
         class="w-full h-full object-cover"
-        src="https://m.media-amazon.com/images/M/MV5BODc1YTE2MDUtNGQ1NS00YmIzLWFjMDItMTg0NjJjMzA0MGQ4XkEyXkFqcGc@._V1_.jpg"
+        src="/shaft.webp"
         alt="Homepage movie poster"
       />
 

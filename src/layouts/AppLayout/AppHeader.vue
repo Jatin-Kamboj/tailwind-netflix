@@ -1,16 +1,15 @@
 <template>
   <header
-    class="bg-transparent text-white fixed top-0 left-0 w-full z-50 shadow-md h-[4.3rem]"
+    class="fixed top-0 left-0 w-full z-50 h-[4.3rem] bg-gradient-to-b from-black/90 to-transparent"
     :class="{ isScrolled: `!bg-black` }"
   >
-    <!-- class="bg-dark text-white fixed top-0 left-0 w-full z-50 shadow-md h-[4.3rem]" -->
     <div class="container mx-auto flex items-center justify-between p-4">
       <router-link to="/" class="text-primary text-3xl font-bold font-primary">
         NETFLIX
       </router-link>
 
       <!-- Hidden for small screens -->
-      <nav class="hidden md:flex gap-6">
+      <nav class="hidden md:flex gap-6 text-white">
         <router-link
           to="/"
           class="hover:text-primary transition text-sm md:text-md"
@@ -42,17 +41,15 @@
         <button class="text-grayish hover:text-white transition">
           <MagnifyingGlassIcon />
         </button>
-        <button
-          class="bg-primary px-3 py-1 rounded text-sm hover:bg-red-700 transition"
-        >
-          Sign In
-        </button>
+
+        <app-button label="Sign In" variant="danger"> </app-button>
       </div>
     </div>
   </header>
 </template>
 
 <script setup>
+import { AppButton } from "@/components/shared";
 import { MagnifyingGlassIcon } from "@heroicons/vue/24/solid";
 import { ref, onMounted, onUnmounted } from "vue";
 const isScrolled = ref(false);

@@ -6,7 +6,7 @@
       <!-- class="w-full h-full object-contain" -->
       <img
         class="w-full h-full object-contain"
-        :src="movie.Poster"
+        v-lazy="movie.Poster"
         :alt="movie.Title"
       />
 
@@ -38,7 +38,7 @@
       </div>
     </div>
     <div
-      class="movie-poster__description grid-cols-1 md:grid-cols-1 grid text-white my-12 gap-2"
+      class="movie-poster__description grid-cols-1 md:grid-cols-2 grid text-white my-12 gap-2"
     >
       <div class="flex gap-2 flex-col">
         <div class="movie-release__details text-xs md:text-base">
