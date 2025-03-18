@@ -38,15 +38,29 @@
       </div>
     </div>
     <div
-      class="movie-poster__description grid-cols-2 grid text-white my-4 gap-3"
+      class="movie-poster__description grid-cols-1 md:grid-cols-1 grid text-white my-12 gap-2"
     >
-      <div class="text-white text-sm md:text-base">
-        In small-town Punjab, three friends dream of better lives in London but
-        struggle to secure visas — until an ex-soldier reveals a wildly risky
-        route.
+      <div class="flex gap-2 flex-col">
+        <div class="movie-release__details text-xs md:text-base">
+          <div class="text-xs md:text-base">
+            <span class="text-grayish">Released Date :</span>
+            <span class="pl-3">{{ movie.Released }}</span>
+          </div>
+        </div>
+        <div class="movie-genre text-xs md:text-base">{{ movie.Genre }}</div>
+        <p class="text-white text-sm md:text-base movie-plot">
+          {{ movie.Plot }}
+        </p>
       </div>
-      <div class="movie_poster__casts">
-        <div><span class="text-grayish">Cast: </span> Cast</div>
+      <div class="movie_poster__casts flex flex-col gap-2">
+        <div class="text-xs md:text-base flex gap-2">
+          <span class="text-grayish">Cast:</span>
+          <span>{{ movie.Actors }}</span>
+        </div>
+        <div class="text-xs md:text-base flex gap-2">
+          <span class="text-grayish">Genre:</span>
+          <span>{{ movie.Genre }}</span>
+        </div>
       </div>
     </div>
   </div>
