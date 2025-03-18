@@ -44,8 +44,16 @@ const movies = computed(() => data.value?.Search ?? []);
 
 const router = useRouter();
 
+/**
+ * Scrolls to top on click on the recommended movie card
+ */
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 function toMoviePage({ imdbID, ...item }) {
   router.push({ name: "movie-show", params: { id: imdbID } });
+  scrollToTop();
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
-  <div id="app-layout">
+  <div id="app-layout" class="h-screen w-full">
     <app-header />
-    <main class="w-full h-screen overflow-scroll bg-dark">
+    <main class="bg-dark">
       <RouterView />
     </main>
     <app-footer />
