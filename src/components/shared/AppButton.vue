@@ -6,7 +6,7 @@
   >
     <!-- Appends an icon infront of button labels -->
     <slot name="appendIcon" />
-    <span>{{ label }}</span>
+    <span v-if="label">{{ label }}</span>
   </button>
 </template>
 

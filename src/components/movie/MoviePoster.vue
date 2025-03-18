@@ -23,16 +23,12 @@
             <PlayIcon class="h-7 w-7" />
           </app-button>
 
-          <div
-            class="h-9 w-9 text-white ring-2 rounded-full ring-gray-400 cursor-pointer hover:ring-white flex items-center justify-center"
-          >
+          <app-icon #icon>
             <PlusIcon class="h-7 w-7" />
-          </div>
-          <div
-            class="h-9 w-9 text-white ring-2 rounded-full ring-gray-400 cursor-pointer hover:ring-white flex items-center justify-center"
-          >
+          </app-icon>
+          <app-icon #icon>
             <HandThumbUpIcon class="h-7 w-7" />
-          </div>
+          </app-icon>
         </div>
       </div>
     </div>
@@ -72,7 +68,7 @@ import {
   PlusIcon,
 } from "@heroicons/vue/24/solid";
 import { HandThumbUpIcon } from "@heroicons/vue/24/outline";
-import { AppButton } from "@/components/shared";
+import { AppButton, AppIcon } from "@/components/shared";
 import { MovieList } from "@/components/movie";
 import { ref } from "vue";
 

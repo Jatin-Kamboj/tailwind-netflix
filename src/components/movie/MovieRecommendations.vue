@@ -16,11 +16,9 @@
         <div class="flex justify-between items-center p-4 pb-0 text-white">
           <div class="text-xs md:text-sm">{{ movie.Year }}</div>
 
-          <div
-            class="h-9 w-9 text-white ring-2 rounded-full ring-gray-400 cursor-pointer hover:ring-white flex items-center justify-center"
-          >
+          <app-icon #icon>
             <PlusIcon class="h-7 w-7" />
-          </div>
+          </app-icon>
         </div>
 
         <div class="text-xs md:text-sm p-4 text-white">
@@ -33,6 +31,7 @@
 
 <script setup>
 import { useFetch } from "@/composables";
+import { AppIcon } from "@/components/shared";
 import { PlusIcon } from "@heroicons/vue/24/solid";
 import { computed, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
