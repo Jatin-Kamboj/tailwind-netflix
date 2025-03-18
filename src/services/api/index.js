@@ -1,8 +1,11 @@
 import axios from "axios";
-import { responseErrorInterceptor } from "./intercesptors/response.interceptor";
+import {
+  responseErrorInterceptor,
+  responseInterceptor,
+} from "./intercesptors/response.interceptor";
 
 export const $http = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: import.meta.env.VITE_API_URL + "/njjj",
   // Default params
   params: {
     apikey: import.meta.env.VITE_API_KEY,
@@ -10,4 +13,4 @@ export const $http = axios.create({
 });
 
 // HTTP response interceptor
-$http.interceptors.response.use(null, responseErrorInterceptor);
+$http.interceptors.response.use(responseInterceptor, responseErrorInterceptor);

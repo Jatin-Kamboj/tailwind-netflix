@@ -13,7 +13,7 @@
 
 <script setup>
 import { computed, ref } from "vue";
-import { useRoute } from "vue-router";
+import { onBeforeRouteUpdate, useRoute } from "vue-router";
 import { MoviePoster, MovieRecommendations } from "@/components/movie";
 import { useFetch } from "@/composables";
 
