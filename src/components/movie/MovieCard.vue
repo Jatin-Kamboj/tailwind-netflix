@@ -1,10 +1,10 @@
 <template>
   <div
     v-if="movie"
+    tabindex="0"
     @click="toMoviePage"
     class="movie-card rounded-md relative cursor-pointer flex-shrink-0 hover:scale-90 duration-300 ease-in-out"
   >
-    <!-- :src="movie.Poster" -->
     <img
       class="w-[270px] h-[150px] object-cover rounded-lg"
       v-lazy="movie.Poster"

@@ -4,6 +4,7 @@
   >
     <template :key="movie.imdbID" v-for="movie in movies">
       <div
+        tabindex="0"
         @click="toMoviePage(movie)"
         class="movie-card rounded-md relative cursor-pointer bg-[#2F2F2F] h-[260px]"
       >
